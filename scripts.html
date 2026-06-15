@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myPC - Complete Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d4;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0078d4;
+            padding-bottom: 10px;
+        }
+
+        .demo-code {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .demo-code code {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .demo-button {
+            background: #0078d4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .demo-button:hover {
+            background: #1084d7;
+        }
+
+        .component-demo {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .calculator-demo {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            max-width: 300px;
+        }
+
+        .calc-btn-demo {
+            padding: 15px;
+            background-color: #e0e0e0;
+            border: 1px solid #bfbfbf;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .calc-btn-demo:hover {
+            background-color: #d0d0d0;
+        }
+
+        .calc-btn-demo.operator-demo {
+            background-color: #0078d4;
+            color: white;
+        }
+
+        .display-demo {
+            grid-column: 1 / -1;
+            padding: 15px;
+            background: white;
+            border: 1px solid #bfbfbf;
+            text-align: right;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f0f7ff;
+            border-left: 4px solid #0078d4;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #0078d4;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖥️ myPC - HTML/CSS/JavaScript PC Simulator</h1>
+
+        <div class="demo-section">
+            <h2>📋 プロジェクト概要</h2>
+            <p>HTML、CSS、JavaScriptのみを使用してPCをシミュレートしています。</p>
+            <ul class="feature-list">
+                <li>✅ ドラッグ可能なウィンドウシステム</li>
+                <li>✅ 複数のアプリケーション（Explorer、Notepad、Browser、Terminal、Calculator）</li>
+                <li>✅ リアルなタスクバー実装</li>
+                <li>✅ デスクトップアイコン</li>
+                <li>✅ ウィンドウフォーカス管理</li>
+                <li>✅ システムクロック表示</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2>📁 ファイル構成</h2>
+            <div class="demo-code">
+                <code>
+myPC/<br>
+├── README.md<br>
+├── index.html<br>
+├── style.css<br>
+├── script.js<br>
+└── scripts.html<br>
+                </code>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🖥️ アプリケーション</h2>
+            
+            <h3>1️⃣ File Explorer</h3>
+            <p>ファイルブラウザ機能</p>
+
+            <h3>2️⃣ Notepad</h3>
+            <p>テキストエディタ</p>
+
+            <h3>3️⃣ Web Browser</h3>
+            <p>Webブラウザシミュレータ</p>
+
+            <h3>4️⃣ Terminal</h3>
+            <p>コマンドラインインターフェース</p>
+
+            <h3>5️⃣ Calculator</h3>
+            <p>関数電卓</p>
+        </div>
+
+        <div class="demo-section">
+            <h2>🚀 使用方法</h2>
+            <ol style="padding-left: 20px;">
+                <li>デスクトップのアイコンをダブルクリックするか、タスクバーのボタンをクリック</li>
+                <li>ウィンドウのタイトルバーをドラッグして移動</li>
+                <li>最小化（−）、最大化（□）、閉じる（×）で操作</li>
+                <li>複数のウィンドウを同時に開くことが可能</li>
+                <li>タスクバーにアプリが表示</li>
+            </ol>
+        </div>
+
+        <div class="demo-section" style="text-align: center; background: #f0f7ff; border-top: 2px solid #0078d4;">
+            <p>Created with ❤️ using HTML, CSS, and JavaScript</p>
+        </div>
+    </div>
+</body>
+</html>
