@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+.desktop {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0078d4;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.wallpaper {
+    flex: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+.taskbar {
+    width: 100%;
+    height: 50px;
+    background-color: #1f1f1f;
+    border-top: 1px solid #3f3f3f;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.taskbar-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.start-btn {
+    padding: 8px 16px;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.start-btn:hover {
+    background-color: #1084d7;
+}
+
+.taskbar-apps {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+}
+
+.taskbar-app {
+    padding: 6px 12px;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border: 1px solid #404040;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.taskbar-app:hover {
+    background-color: #3f3f3f;
+    color: white;
+}
+
+.taskbar-app.active {
+    background-color: #0078d4;
+    color: white;
+}
+
+.system-tray {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.clock {
+    color: #e0e0e0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.windows-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px);
+    pointer-events: none;
+}
+
+.windows-container > * {
+    pointer-events: auto;
+}
+
+.window {
+    position: absolute;
+    background-color: #f0f0f0;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    min-width: 300px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.window.active {
+    z-index: 10000;
+}
+
+.window-header {
+    background: linear-gradient(90deg, #0078d4 0%, #1084d7 100%);
+    color: white;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    border-radius: 3px 3px 0 0;
+    user-select: none;
+}
+
+.window-header-title {
+    font-weight: bold;
+    font-size: 14px;
+    flex: 1;
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.window-btn {
+    width: 28px;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+}
+
+.window-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.window-btn.close:hover {
+    background-color: #e81123;
+}
+
+.window-content {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+}
+
+.desktop-icons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: auto;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+}
+
+.desktop-icon:hover {
+    opacity: 0.8;
+}
+
+.desktop-icon:active {
+    transform: scale(0.95);
+}
+
+.desktop-icon .icon {
+    font-size: 48px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.desktop-icon:hover .icon {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.desktop-icon .label {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    max-width: 80px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    word-wrap: break-word;
+}
+
+.window.explorer .window-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.file-item:hover {
+    background-color: #e0e0e0;
+}
+
+.file-item-icon {
+    font-size: 24px;
+}
+
+.file-item-name {
+    flex: 1;
+    font-size: 13px;
+}
+
+.notepad-textarea {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    resize: none;
+    background-color: white;
+}
+
+.terminal-output {
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    padding: 10px;
+    min-height: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.terminal-input {
+    width: 100%;
+    background-color: #000;
+    color: #00ff00;
+    border: none;
+    padding: 5px 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.calculator-display {
+    grid-column: 1 / -1;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #bfbfbf;
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.calc-btn {
+    padding: 15px;
+    background-color: #e0e0e0;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.calc-btn:hover {
+    background-color: #d0d0d0;
+}
+
+.calc-btn:active {
+    background-color: #c0c0c0;
+}
+
+.calc-btn.operator {
+    background-color: #0078d4;
+    color: white;
+}
+
+.calc-btn.operator:hover {
+    background-color: #1084d7;
+}
+
+.browser-navbar {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bfbfbf;
+}
+
+.browser-btn {
+    padding: 6px 12px;
+    background-color: #e0e0e0;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.browser-btn:hover {
+    background-color: #d0d0d0;
+}
+
+.browser-url {
+    flex: 1;
+    padding: 6px 8px;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.browser-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: white;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
