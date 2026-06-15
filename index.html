@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myPC - PC Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="desktop">
+        <div class="wallpaper"></div>
+        
+        <div class="taskbar">
+            <div class="taskbar-content">
+                <button class="start-btn">🪟 Start</button>
+                <div class="taskbar-apps">
+                    <button class="taskbar-app" data-app="explorer">📁 Explorer</button>
+                    <button class="taskbar-app" data-app="notepad">📝 Notepad</button>
+                    <button class="taskbar-app" data-app="browser">🌐 Browser</button>
+                    <button class="taskbar-app" data-app="terminal">⌨️ Terminal</button>
+                    <button class="taskbar-app" data-app="calculator">🧮 Calculator</button>
+                </div>
+                <div class="system-tray">
+                    <span class="clock" id="clock">00:00</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="windows-container" id="windowsContainer">
+        </div>
+        
+        <div class="desktop-icons">
+            <div class="desktop-icon" data-app="explorer">
+                <div class="icon">📁</div>
+                <div class="label">My Computer</div>
+            </div>
+            <div class="desktop-icon" data-app="notepad">
+                <div class="icon">📝</div>
+                <div class="label">Notepad</div>
+            </div>
+            <div class="desktop-icon" data-app="browser">
+                <div class="icon">🌐</div>
+                <div class="label">Browser</div>
+            </div>
+            <div class="desktop-icon" data-app="terminal">
+                <div class="icon">⌨️</div>
+                <div class="label">Terminal</div>
+            </div>
+            <div class="desktop-icon" data-app="calculator">
+                <div class="icon">🧮</div>
+                <div class="label">Calculator</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
