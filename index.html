@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myPC - PC Simulator</title>
+    <title>myPC - Advanced PC Simulator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,14 +14,23 @@
             <div class="taskbar-content">
                 <button class="start-btn">🪟 Start</button>
                 <div class="taskbar-apps">
-                    <button class="taskbar-app" data-app="explorer">📁 Explorer</button>
-                    <button class="taskbar-app" data-app="notepad">📝 Notepad</button>
-                    <button class="taskbar-app" data-app="browser">🌐 Browser</button>
-                    <button class="taskbar-app" data-app="terminal">⌨️ Terminal</button>
-                    <button class="taskbar-app" data-app="calculator">🧮 Calculator</button>
+                    <button class="taskbar-app" data-app="explorer">📁</button>
+                    <button class="taskbar-app" data-app="notepad">📝</button>
+                    <button class="taskbar-app" data-app="browser">🌐</button>
+                    <button class="taskbar-app" data-app="terminal">⌨️</button>
+                    <button class="taskbar-app" data-app="calculator">🧮</button>
+                    <button class="taskbar-app" data-app="paint">🎨</button>
+                    <button class="taskbar-app" data-app="media">🎵</button>
+                    <button class="taskbar-app" data-app="mail">📧</button>
+                    <button class="taskbar-app" data-app="settings">⚙️</button>
+                    <button class="taskbar-app" data-app="weather">🌤️</button>
+                    <button class="taskbar-app" data-app="games">🎮</button>
+                    <button class="taskbar-app" data-app="photos">📸</button>
                 </div>
                 <div class="system-tray">
-                    <span class="clock" id="clock">00:00</span>
+                    <span class="battery">🔋 95%</span>
+                    <span class="wifi">📶 Connected</span>
+                    <span class="clock" id="clock">00:00:00</span>
                 </div>
             </div>
         </div>
@@ -32,11 +41,11 @@
         <div class="desktop-icons">
             <div class="desktop-icon" data-app="explorer">
                 <div class="icon">📁</div>
-                <div class="label">My Computer</div>
+                <div class="label">File Manager</div>
             </div>
             <div class="desktop-icon" data-app="notepad">
                 <div class="icon">📝</div>
-                <div class="label">Notepad</div>
+                <div class="label">Text Editor</div>
             </div>
             <div class="desktop-icon" data-app="browser">
                 <div class="icon">🌐</div>
@@ -49,6 +58,18 @@
             <div class="desktop-icon" data-app="calculator">
                 <div class="icon">🧮</div>
                 <div class="label">Calculator</div>
+            </div>
+            <div class="desktop-icon" data-app="paint">
+                <div class="icon">🎨</div>
+                <div class="label">Paint</div>
+            </div>
+            <div class="desktop-icon" data-app="media">
+                <div class="icon">🎵</div>
+                <div class="label">Media Player</div>
+            </div>
+            <div class="desktop-icon" data-app="games">
+                <div class="icon">🎮</div>
+                <div class="label">Games</div>
             </div>
         </div>
     </div>
